@@ -22,10 +22,11 @@ class LoginHelper extends React.Component {
         e.preventDefault();
 
         axios
-            .post('#', this.state.credentials)
+            .post('https://dev-desk-que-3-bw.herokuapp.com/api/helper', this.state.credentials)
             .then(res => {
                 localStorage.setItem('token', res.data.payload);
-                this.props.history.push('#');
+                localStorage.setItem('id', res.data.id)
+                this.props.history.push('/helper');
             })
             .catch(err => console.log(err.message))
     };
