@@ -11,7 +11,7 @@ function Helper() {
     useEffect(() => {
         const getTickets = () => {
             axiosWithAuth()
-                .get('#')
+                .get('tickets')
                 .then(res => {
                     setTickets(res.data);
                 })
@@ -24,13 +24,23 @@ function Helper() {
         e.preventDefault();
 
         axiosWithAuth()
+            .put(`helper-student-ticket`, {
+                ticketId: selectedTicket.id,
+                studentId: selectedTicket.studentId,
+                helpId: userID
+            })
+            .then(
+                window.location.replace('#')
+            )
+            .catch(err => console.log(err));
+        
+        axiosWithAuth()
             .put(`#`, {
                 id: selectedTicket.id,
-                helpId: userID,
-                studentId: selectedTicket.studentId,
-                openStatus: false
+                title: selectedTicket.title,
+                
             })
-    }
+    };
 
     return(
         <div>
