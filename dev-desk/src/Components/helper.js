@@ -11,7 +11,7 @@ function Helper() {
     useEffect(() => {
         const getTickets = () => {
             axiosWithAuth()
-                .get('tickets')
+                .get('/ticket')
                 .then(res => {
                     setTickets(res.data);
                 })
@@ -44,14 +44,14 @@ function Helper() {
 
     return(
         <div>
-            {tickets.map(ticket => {
+            {tickets.map(ticket => (
                 <div>
                     <p>{ticket.title}</p>
                     <p>{ticket.description}</p>
                     <p>{ticket.attempted}</p>
                     <button>Assign Ticket</button>
                 </div>
-            })}
+            ))}
             <LogOutHeader/>
         </div>
     )
