@@ -1,9 +1,17 @@
 import React from 'react';
+<<<<<<< HEAD
 import logo from './logo.svg';
+=======
+import {BrowserRouter, Route} from 'react-router-dom';
+import HomePage from './Components/homePage';
+import LoginHelper from './Components/loginHelper';
+import Helper from './Components/helper';
+>>>>>>> Development
 import './App.css';
 
 function App() {
   return (
+<<<<<<< HEAD
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,7 +28,21 @@ function App() {
         </a>
       </header>
     </div>
+=======
+    <BrowserRouter>
+    <div className="App">
+      <Route exact path='/' component={HomePage}/>
+      <Route path='/loginHelper' component={LoginHelper}/>
+      <Route exact path ='/helper' component={Helper}/>
+    </div>
+    </BrowserRouter>
+>>>>>>> Development
   );
 }
 
 export default App;
+<<<<<<< HEAD
+=======
+
+//Change Router /helper to private
+>>>>>>> Development
