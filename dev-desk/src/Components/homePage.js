@@ -5,7 +5,11 @@ function HomePage() {
     return(
         <div>
             <h1>Developement Desk Home Page</h1>
-            <button>Student</button>
+            
+            <Link to='/studentLogin'>
+                <button>Student</button>
+            </Link>
+            
             <Link to='/loginHelper'>
                 <button>Helper</button>
             </Link>
