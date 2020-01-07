@@ -4,6 +4,7 @@ import HomePage from './Components/homePage';
 import LoginHelper from './Components/loginHelper';
 import Helper from './Components/helper';
 import studentLogin from "./Components/studentLogin";
+import studentRegister from "./Components/studentRegister";
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path='/loginHelper' component={LoginHelper}/>
         <Route exact path ='/helper' component={Helper}/>
         <Route path="/studentLogin" component={studentLogin}/>
+        <Route path="/studentRegister" component={studentRegister}/>
       </div>
     </BrowserRouter>
   );
