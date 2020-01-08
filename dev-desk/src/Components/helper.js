@@ -57,16 +57,19 @@ function Helper() {
     
     return(
         <div>
+            <LogOutHeader/>
             <div>
                 {tickets.map(ticket => (
-                    <div className='ticketListHelper'>
+                    <div className='ticketListHelper' key={ticket.id}>
                         <p>Title: {ticket.title}</p>
                         <p>Description: {ticket.description}</p>
                         <p>Attempted: {ticket.attempted}</p>
-                        <button onClick={assignTicket}>Assign Ticket</button>
+                        {ticket.resolved === true ? <p>Resolved</p> : null }
+                        {ticket.openStatus === false && ticket.resolved === false ? <p>Ticket Assigned</p> : null}
+                        {ticket.resolved === false && ticket.openStatus === true ? <button onClick={assignTicket}>Assign Ticket</button> : null}
                     </div>
                 ))}
-                <LogOutHeader/>
+                
             </div>
             <div>
                 {userTickets.map(ticket => (
