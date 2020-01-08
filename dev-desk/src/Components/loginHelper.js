@@ -24,11 +24,11 @@ class LoginHelper extends React.Component {
         e.preventDefault();
 
         axios
-            .post('https://dev-desk-que-3-bw.herokuapp.com/api/helper/login', this.state.credentials)
+            .post('https://dev-desk-que-3-bw.herokuapp.com/api/user/login', this.state.credentials)
             .then(res => {
                 console.log(res);
-                localStorage.setItem('token', res.data.payload);
-                localStorage.setItem('id', res.data.id)
+                localStorage.setItem('token', res.data.token);
+                localStorage.setItem('id', res.data.data.id)
                 this.props.history.push('/helper');
             })
             .catch(err => {
@@ -36,15 +36,16 @@ class LoginHelper extends React.Component {
                 this.setState({failLogin: true});
             })
     };
-
+    
     render(){
+        
         return(
             <div>
                 <h1>Helper Log In Page</h1>
                 
                 <div className='content'>
                     <div className='image'>
-                        <img src={helperImg} alt='Helper'/>
+                        <img src={helperImg} alt='Helper' width='50%' height='50%'/>
                     </div>
                 </div>
                 <form onSubmit={this.login}>
