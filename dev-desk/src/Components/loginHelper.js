@@ -28,7 +28,8 @@ class LoginHelper extends React.Component {
             .then(res => {
                 console.log(res);
                 localStorage.setItem('token', res.data.token);
-                localStorage.setItem('id', res.data.data.id)
+                localStorage.setItem('id', res.data.data[0].id);
+                localStorage.setItem('name', res.data.data[0].username);
                 this.props.history.push('/helper');
             })
             .catch(err => {
@@ -38,7 +39,10 @@ class LoginHelper extends React.Component {
     };
     
     render(){
-        
+        const userID = localStorage.getItem('id');
+        const username = localStorage.getItem('name');
+        console.log(userID);
+        console.log(username);
         return(
             <div>
                 <h1>Helper Log In Page</h1>
