@@ -1,4 +1,5 @@
 import React from 'react';
+import helperImg from '../../src/askMe.svg';
 import axios from 'axios';
 
 class LoginHelper extends React.Component {
@@ -34,6 +35,12 @@ class LoginHelper extends React.Component {
         return(
             <div>
                 <h1>Helper Log In Page</h1>
+                
+                <div className='content'>
+                    <div className='image'>
+                        <img src={helperImg} alt='Helper'/>
+                    </div>
+                </div>
                 <form onSubmit={this.login}>
                     <input
                         type='text'

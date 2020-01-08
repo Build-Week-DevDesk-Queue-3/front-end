@@ -1,7 +1,7 @@
 import React from "react";
-import loginImg from "../../SVG/signIn.svg";
+import loginImg from "../../src/signIn.svg";
 
-export class Login extends React.Component {
+export class studentLogin extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -9,11 +9,11 @@ export class Login extends React.Component {
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
-        <div className="header">Login</div>
+        <div className="header">Student Login</div>
         
         <div className="content">
           <div className="image">
-            <img src={loginImg}/>
+            <img src={loginImg} alt="Student Login"/>
           </div>
           
           <div className="form">
@@ -24,7 +24,7 @@ export class Login extends React.Component {
             
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" name="password" placeholder="password"/>
+              <input type="text" name="password" placeholder="password"/>
             </div>
           </div>
         </div>
@@ -38,3 +38,5 @@ export class Login extends React.Component {
     );
   }
 }
+
+export default studentLogin
