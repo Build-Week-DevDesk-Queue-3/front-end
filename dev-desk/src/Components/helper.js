@@ -11,26 +11,27 @@ function Helper() {
     useEffect(() => {
         const getTickets = () => {
             axiosWithAuth()
-                .get('/ticket')
+                .get('/ticket/')
                 .then(res => {
                     setTickets(res.data);
+                    console.log(res);
                 })
-                .catch(err => console.log(err))
+                .catch(err => console.log(err.message))
         };
         getTickets()
     },[]);
 
-    useEffect(() => {
-        const getUserTickets = () => {
-            axiosWithAuth()
-                .get('/userTickets')
-                .then(res => {
-                    setUserTickets(res.data);
-                })
-                .catch(err => console.log(err))
-        };
-        getUserTickets()
-    },[])
+ //   useEffect(() => {
+ //       const getUserTickets = () => {
+ //           axiosWithAuth()
+ //               .get('/userTickets')
+ //               .then(res => {
+ //                   setUserTickets(res.data);
+ //               })
+ //               .catch(err => console.log(err))
+ //       };
+ //       getUserTickets()
+ //   },[])
 
     const assignTicket = e => {
         e.preventDefault();
@@ -53,15 +54,15 @@ function Helper() {
                 
             })
     };
-
+    
     return(
         <div>
             <div>
                 {tickets.map(ticket => (
-                    <div>
-                        <p>{ticket.title}</p>
-                        <p>{ticket.description}</p>
-                        <p>{ticket.attempted}</p>
+                    <div className='ticketListHelper'>
+                        <p>Title: {ticket.title}</p>
+                        <p>Description: {ticket.description}</p>
+                        <p>Attempted: {ticket.attempted}</p>
                         <button onClick={assignTicket}>Assign Ticket</button>
                     </div>
                 ))}
