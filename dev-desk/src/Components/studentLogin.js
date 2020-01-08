@@ -1,10 +1,43 @@
 import React from "react";
 import loginImg from "../../src/signIn.svg";
+import axios from 'axios' //added import
 
-export class studentLogin extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+class studentLogin extends React.Component {
+  //added state
+  state = {
+    credentials: {
+        username: '',
+        password: ''
+    },
+    failLogin: false
+};
+//added handleChange
+handleChange = e => {
+    this.setState({
+        credentials: {
+            ...this.state.credentials,
+            [e.target.name]: e.target.value
+        }
+    })
+};
+//added login
+login = e => {
+    e.preventDefault();
+
+    axios
+        .post('https://dev-desk-que-3-bw.herokuapp.com/api/user/login', this.state.credentials)
+        .then(res => {
+            console.log(res);
+            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('id', res.data.data[0].id);
+            localStorage.setItem('name', res.data.data[0].username);
+            this.props.history.push('/student');
+        })
+        .catch(err => {
+            console.log(err.message);
+            this.setState({failLogin: true});
+        })
+};
   
   render() {
     return (
@@ -19,18 +52,30 @@ export class studentLogin extends React.Component {
           <div className="form">
             <div className="form-group">
               <label htmlFor="username">Username</label>
-              <input type="text" name="username" placeholder="username"/>
+              <input 
+                type="text" 
+                name="username" 
+                placeholder="username"
+                value={this.state.credentials.username} //added
+                onChange={this.handleChange} //added
+              />
             </div>
             
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="text" name="password" placeholder="password"/>
+              <input 
+                type="password" //changed from text to password
+                name="password" 
+                placeholder="password"
+                value={this.state.credentials.password} //added
+                onChange={this.handleChange} //added
+              />
             </div>
           </div>
         </div>
         
         <div className="footer">
-          <button type="button" className="btn">
+          <button type="button" className="btn" onClick={this.login} >
             Login
           </button>
         </div>
