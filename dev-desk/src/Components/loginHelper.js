@@ -39,10 +39,6 @@ class LoginHelper extends React.Component {
     };
     
     render(){
-        const userID = localStorage.getItem('id');
-        const username = localStorage.getItem('name');
-        console.log(userID);
-        console.log(username);
         return(
             <div>
                 <h1>Helper Log In Page</h1>

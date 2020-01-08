@@ -7,6 +7,7 @@ function Helper() {
     const [userTickets, setUserTickets] = useState([]);
     const [selectedTicket, setSelectedTicket] = useState({})
     const userID = localStorage.getItem('id');
+    const username = localStorage.getItem('name')
 
     useEffect(() => {
         const getTickets = () => {
@@ -59,6 +60,10 @@ function Helper() {
         <div>
             <LogOutHeader/>
             <div>
+                <h1>Welcome {username} to the Helper page</h1>
+            </div>
+            <div>
+                <h3 className='ticketListHelper'>List of Tickets</h3>
                 {tickets.map(ticket => (
                     <div className='ticketListHelper' key={ticket.id}>
                         <p>Title: {ticket.title}</p>
