@@ -14,7 +14,7 @@ function LogOutHeader() {
     const logOut = e => {
         e.preventDefault();
         localStorage.removeItem('token');
-        window.location='/loginHelper'
+        window.location='/'
     }
 
     return(
