@@ -62,6 +62,7 @@ function Helper() {
                 {tickets.map(ticket => (
                     <div className='ticketListHelper' key={ticket.id}>
                         <p>Title: {ticket.title}</p>
+                        <p>Category: {ticket.category}</p>
                         <p>Description: {ticket.description}</p>
                         <p>Attempted: {ticket.attempted}</p>
                         {ticket.resolved === true ? <p>Resolved</p> : null }
