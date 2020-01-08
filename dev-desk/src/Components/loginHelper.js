@@ -7,7 +7,8 @@ class LoginHelper extends React.Component {
         credentials: {
             username: '',
             password: ''
-        }
+        },
+        failLogin: false
     };
 
     handleChange = e => {
@@ -23,12 +24,17 @@ class LoginHelper extends React.Component {
         e.preventDefault();
 
         axios
-            .post('#', this.state.credentials)
+            .post('https://dev-desk-que-3-bw.herokuapp.com/api/helper/login', this.state.credentials)
             .then(res => {
+                console.log(res);
                 localStorage.setItem('token', res.data.payload);
-                this.props.history.push('#');
+                localStorage.setItem('id', res.data.id)
+                this.props.history.push('/helper');
             })
-            .catch(err => console.log(err.message))
+            .catch(err => {
+                console.log(err.message);
+                this.setState({failLogin: true});
+            })
     };
 
     render(){
@@ -57,6 +63,7 @@ class LoginHelper extends React.Component {
                         placeholder='Password'
                     />
                     <button>Log In</button>
+                    {this.state.failLogin === true ? <p>Log In Failed</p> : null}
                 </form>
             </div>
         );
