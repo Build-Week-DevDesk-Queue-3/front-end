@@ -13,12 +13,13 @@ function LogOutHeader() {
 
     const logOut = e => {
         e.preventDefault();
-        localStorage.removeItem('token')
+        localStorage.removeItem('token');
+        window.location='/loginHelper'
     }
 
     return(
         <div>
-            <Button onClick={() => logOut}>Log Out</Button>
+            <Button onClick={logOut}>Log Out</Button>
         </div>
     )
 }
