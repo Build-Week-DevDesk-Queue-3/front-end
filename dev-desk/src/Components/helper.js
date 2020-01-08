@@ -20,6 +20,18 @@ function Helper() {
         getTickets()
     },[]);
 
+    useEffect(() => {
+        const getUserTickets = () => {
+            axiosWithAuth()
+                .get('/userTickets')
+                .then(res => {
+                    setUserTickets(res.data);
+                })
+                .catch(err => console.log(err))
+        };
+        getUserTickets()
+    },[])
+
     const assignTicket = e => {
         e.preventDefault();
 
@@ -44,15 +56,28 @@ function Helper() {
 
     return(
         <div>
-            {tickets.map(ticket => (
-                <div>
-                    <p>{ticket.title}</p>
-                    <p>{ticket.description}</p>
-                    <p>{ticket.attempted}</p>
-                    <button>Assign Ticket</button>
-                </div>
-            ))}
-            <LogOutHeader/>
+            <div>
+                {tickets.map(ticket => (
+                    <div>
+                        <p>{ticket.title}</p>
+                        <p>{ticket.description}</p>
+                        <p>{ticket.attempted}</p>
+                        <button onClick={assignTicket}>Assign Ticket</button>
+                    </div>
+                ))}
+                <LogOutHeader/>
+            </div>
+            <div>
+                {userTickets.map(ticket => (
+                    <div>
+                        <p>{ticket.title}</p>
+                        <p>{ticket.description}</p>
+                        <p>{ticket.attempted}</p>
+                        <button >Ticket Resolved</button>
+                        <button >Unassign Ticket</button>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
