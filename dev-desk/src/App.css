@@ -1,3 +1,9 @@
 .App {
   text-align: center;
 }
+.ticketListHelper {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}

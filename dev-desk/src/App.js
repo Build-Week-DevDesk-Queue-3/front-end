@@ -6,6 +6,7 @@ import LoginHelper from './Components/loginHelper';
 import Helper from './Components/helper';
 import studentLogin from './Components/studentLogin';
 import studentRegister from './Components/studentRegister';
+import '../src/App.css'
 
 function App() {
   return (
