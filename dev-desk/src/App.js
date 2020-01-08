@@ -4,6 +4,8 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import HomePage from './Components/homePage';
 import LoginHelper from './Components/loginHelper';
 import Helper from './Components/helper';
+import studentLogin from './Components/studentLogin';
+import studentRegister from './Components/studentRegister';
 
 function App() {
   return (
