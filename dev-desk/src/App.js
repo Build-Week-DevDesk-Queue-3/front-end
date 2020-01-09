@@ -1,12 +1,12 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 //import privateRoute from './privateRoute';
-import HomePage from './Components/homePage';
+import HomePage from './Pages/homePage';
 import LoginHelper from './Components/loginHelper';
 import Helper from './Components/helper';
-import studentLogin from './Components/studentLogin';
-import studentRegister from './Components/studentRegister';
-import student from './Components/student';
+import studentLogin from './Pages/studentLogin';
+import studentRegister from './Pages/studentRegister';
+import studentDashboard from './Pages/studentDashboard';
 import '../src/App.css'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route exact path ='/helper' component={Helper}/>
         <Route path="/studentLogin" component={studentLogin}/>
         <Route path="/studentRegister" component={studentRegister}/>
-        <Route path='/student' component={student}/>
+        <Route path='/studentDashboard' component={studentDashboard}/>
       </div>
     </BrowserRouter>
   );
