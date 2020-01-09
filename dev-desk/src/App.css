@@ -1,11 +1,14 @@
 .App {
   text-align: center;
 }
-.helperTicketsContainer{
+.helperWelcome {
+  margin-left: 10%;
+}
+.helperTicketsContainer {
   display: flex;
   justify-content: space-evenly;
 }
-.helperTicketSubcontainer{
+.helperTicketSubcontainer {
   width:40%;
 }
 .ticketListHelper {

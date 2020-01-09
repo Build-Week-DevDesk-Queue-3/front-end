@@ -51,7 +51,18 @@ function Helper() {
         let ticket = Number(e.target.value);
 
         axiosWithAuth()
-            .put(`ticket/unassign`, {
+            .put(`/ticket/unassign`, {
+                ticketId: ticket
+            });
+
+        setTimeout(() => {setUpdate(update +1)}, 100);
+    }
+
+    const ticketResolved = e => {
+        let ticket = Number(e.target.value);
+
+        axiosWithAuth()
+            .put('/ticket/resolved', {
                 ticketId: ticket
             });
 
@@ -62,7 +73,7 @@ function Helper() {
         <div>{console.log(update)}
             <LogOutHeader/>
             <div>
-                <h1>Welcome {username} to the Helper page</h1>
+                <h1 className='helperWelcome'>Welcome {username} to the Helper page</h1>
             </div>
             <div className='helperTicketsContainer'>
                 <div className='helperTicketSubcontainer'>
@@ -88,7 +99,7 @@ function Helper() {
                             <p>Category: {ticket.category}</p>
                             <p>Description: {ticket.description}</p>
                             <p>Attempted: {ticket.attempted}</p>
-                            <button >Ticket Resolved</button>
+                            <button valule={ticket.id} onClick={ticketResolved}>Ticket Resolved</button>
                             <button value={ticket.id} onClick={unassignTicket}>Unassign Ticket</button>
                         </div>
                     ))}
