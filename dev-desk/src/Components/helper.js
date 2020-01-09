@@ -68,9 +68,13 @@ function Helper() {
 
         setTimeout(() => {setUpdate(update +1)}, 100);
     }
+
+    const handleCreateTicket = e => {
+        window.location=('/helperTicket');
+    }
     
     return(
-        <div>{console.log(update)}
+        <div>
             <LogOutHeader/>
             <div>
                 <h1 className='helperWelcome'>Welcome {username} to the Helper page</h1>
@@ -105,6 +109,7 @@ function Helper() {
                     ))}
                 </div>
             </div>
+            <button onClick={handleCreateTicket}>Create Ticket</button>
         </div>
     )
 }

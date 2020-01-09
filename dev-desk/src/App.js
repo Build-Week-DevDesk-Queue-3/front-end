@@ -7,6 +7,7 @@ import Helper from './Components/helper';
 import studentLogin from './Components/studentLogin';
 import studentRegister from './Components/studentRegister';
 import student from './Components/student';
+import CreateTicket from './Components/createHelperTicket'
 import '../src/App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/studentLogin" component={studentLogin}/>
         <Route path="/studentRegister" component={studentRegister}/>
         <Route path='/student' component={student}/>
+        <Route path='/helperTicket' component={CreateTicket}/>
       </div>
     </BrowserRouter>
   );
