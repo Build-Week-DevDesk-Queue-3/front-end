@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {axiosWithAuth} from './axiosWithAuth';
 
 function CreateTicket() {
@@ -7,8 +7,17 @@ function CreateTicket() {
     const [description, setDescription] = useState('');
     const [attempted, setAttempted] = useState('');
 
-    const handleChange = e => {
-        
+    const handleTitle = e => {
+        setTitle(e.target.value)
+    }
+    const handleCategory = e => {
+        setCategory(e.target.value)
+    }
+    const handleDespription = e => {
+        setDescription(e.target.value)
+    }
+    const handleAttempted = e => {
+        setAttempted(e.target.value)
     }
 
     const handleSubmit = e => {
@@ -23,6 +32,8 @@ function CreateTicket() {
             })
             .then(res => console.log(res.message))
             .catch(err => console.log(err.message));
+            
+        window.location='/helper'
     }
 
     const handleCancel = e => {
@@ -38,34 +49,40 @@ function CreateTicket() {
                     type='text'
                     name='title'
                     value={title}
-                    onChange={handleChange}
+                    onChange={handleTitle}
+                    size='40'
                 />
-                <br/>
+                <br/><br/>
                 Give your ticket a category:<br/>
                 (Examples: JavaScript, React, CSS)<br/>
                 <input
                     type='text'
                     name='category'
                     value={category}
-                    onChange={handleChange}
+                    onChange={handleCategory}
+                    size='40'
                 />
-                <br/>
+                <br/><br/>
                 Describe the problem you are having:<br/>
-                <input
+                <textarea
                     type='text'
                     name='description'
                     value={description}
-                    onChange={handleChange}
+                    onChange={handleDespription}
+                    rows="8" 
+                    cols="32"
                 />
-                <br/>
-                Describe what you have attempted so far:<br/>
-                <input
+                <br/><br/>
+                Describe what you have attempted:<br/>
+                <textarea
                     type='text'
                     name='attempted'
                     value={attempted}
-                    onChange={handleChange}
+                    onChange={handleAttempted}
+                    rows="8" 
+                    cols="32"
                 />
-                <br/>
+                <br/><br/>
                 <button>Submit</button>
             </form>
             <button onClick={handleCancel}>Cancel</button>
