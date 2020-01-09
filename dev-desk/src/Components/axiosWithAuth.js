@@ -5,8 +5,8 @@ export const axiosWithAuth = () => {
 
     return axios.create({
         baseURL: 'https://dev-desk-que-3-bw.herokuapp.com/api',
-        header: {
-            Authorization: token
+        headers: {
+            authorization: token
         }
     })
 }
