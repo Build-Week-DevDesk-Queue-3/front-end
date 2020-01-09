@@ -5,6 +5,7 @@ import LogOutHeader from './logOutHeader';
 function Helper() {
     const [tickets, setTickets] = useState([]);
     const [userTickets, setUserTickets] = useState([]);
+    const [update, setUpdate] = useState(1)
     const userID = localStorage.getItem('id');
     const username = localStorage.getItem('name')
 
@@ -19,9 +20,7 @@ function Helper() {
                 .catch(err => console.log(err.message))
         };
         getTickets()
-    },[]);
-
-    useEffect(() => {
+        
         const getUserTickets = () => {
             axiosWithAuth()
                 .get(`/ticket/users-tickets/${userID}`)
@@ -32,23 +31,35 @@ function Helper() {
                 .catch(err => console.log(err))
         };
         getUserTickets()
-    },[])
+    },[update]);
 
     const assignTicket = e => { 
         let user = Number(userID);
-        let ticket = Number(e.target.value) 
-        console.log(user)     
-        console.log(ticket);       
+        let ticket = Number(e.target.value);
+
         axiosWithAuth()
             .put(`/ticket/assign`, {
                 userId: user,
                 ticketId: ticket                
             })
             .catch(err => console.log(err.message));
+
+        setTimeout(() => {setUpdate(update +1)}, 100);
     };
+
+    const unassignTicket = e => {
+        let ticket = Number(e.target.value);
+
+        axiosWithAuth()
+            .put(`ticket/unassign`, {
+                ticketId: ticket
+            });
+
+        setTimeout(() => {setUpdate(update +1)}, 100);
+    }
     
     return(
-        <div>
+        <div>{console.log(update)}
             <LogOutHeader/>
             <div>
                 <h1>Welcome {username} to the Helper page</h1>
@@ -72,13 +83,13 @@ function Helper() {
                 <div className='helperTicketSubcontainer'>
                     <h3 className='assignedListHelper'>Tickets Assigned to You</h3>
                     {userTickets.map(ticket => (
-                        <div className='assignedListHelper'>
+                        <div className='assignedListHelper' key={ticket.id}>
                             <p>Title: {ticket.title}</p>
                             <p>Category: {ticket.category}</p>
                             <p>Description: {ticket.description}</p>
                             <p>Attempted: {ticket.attempted}</p>
                             <button >Ticket Resolved</button>
-                            <button >Unassign Ticket</button>
+                            <button value={ticket.id} onClick={unassignTicket}>Unassign Ticket</button>
                         </div>
                     ))}
                 </div>
