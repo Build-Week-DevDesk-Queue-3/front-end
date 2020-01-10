@@ -60,7 +60,7 @@ export const userSignUp = (userData, history) => dispatch => {
     });
 };
 
-export const logoutUser = history => dispatch => {
+export const logOutUser = history => dispatch => {
   localStorage.removeItem('token');
   localStorage.removeItem('reduxState');
   dispatch({type: LOGOUT});
