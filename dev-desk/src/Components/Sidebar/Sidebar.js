@@ -12,8 +12,35 @@ export const SideBar = ({createTicket}) => {
   return (
     <div>
       <Sider>
+        <div className="logo"/>
         
+        <Menu
+         mode="inline"
+         defaultSelectedKeys={['1']}
+         style={{
+           height: '100vh',
+           width: '20vw',
+           background: '#1F2041',
+           position: 'fixed',
+           boxShadow: '1px 1px 1px 1px #1F2041',
+           border: 'none'
+         }}
+        >
+          <Header/>
+          <Profile/>
+          <Footer/>        
+        </Menu>
       </Sider>
     </div>
-  )
-}
+  );
+};
+
+const mapStateToProps = state => state.user;
+const mapActionsToProps = {
+  createTicket
+};
+
+export default connect(
+  mapStateToProps,
+  mapActionsToProps  
+)(SideBar);
