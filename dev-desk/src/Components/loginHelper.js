@@ -55,6 +55,7 @@ class LoginHelper extends React.Component {
                         value={this.state.credentials.username}
                         onChange={this.handleChange}
                         placeholder='User Name'
+                        className='helperLoginInput'
                     />
                     <input
                         type='password'
@@ -62,6 +63,7 @@ class LoginHelper extends React.Component {
                         value={this.state.credentials.password}
                         onChange={this.handleChange}
                         placeholder='Password'
+                        className='helperLoginInput'
                     />
                     <button>Log In</button>
                     {this.state.failLogin === true ? <p>Log In Failed</p> : null}

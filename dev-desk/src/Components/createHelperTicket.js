@@ -32,8 +32,8 @@ function CreateTicket() {
             })
             .then(res => console.log(res.message))
             .catch(err => console.log(err.message));
-            
-        window.location='/helper'
+
+       // window.location='/helper'
     }
 
     const handleCancel = e => {
@@ -41,7 +41,7 @@ function CreateTicket() {
     }
 
     return(
-        <div>
+        <div className='helperComponent helperTicket'>
             <h1>Ticket Form</h1>
             <form onSubmit={handleSubmit}>
                 Give your ticket a title:<br/>
@@ -83,9 +83,9 @@ function CreateTicket() {
                     cols="32"
                 />
                 <br/><br/>
-                <button>Submit</button>
+                <button className='helperTicketButton'>Submit</button>
             </form>
-            <button onClick={handleCancel}>Cancel</button>
+            <button onClick={handleCancel} className='helperTicketButton'>Cancel</button>
         </div>
     )
 }

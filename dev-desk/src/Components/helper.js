@@ -74,10 +74,11 @@ function Helper() {
     }
     
     return(
-        <div>
+        <div className='helperComponent'>
             <LogOutHeader/>
+            <button onClick={handleCreateTicket} className='helperCreateTicketButton'>Create Ticket</button>
             <div>
-                <h1 className='helperWelcome'>Welcome {username} to the Helper page</h1>
+                <h1 className='helperWelcome'>Welcome {username} to the Helper page!</h1>
             </div>
             <div className='helperTicketsContainer'>
                 <div className='helperTicketSubcontainer'>
@@ -108,8 +109,7 @@ function Helper() {
                         </div>
                     ))}
                 </div>
-            </div>
-            <button onClick={handleCreateTicket}>Create Ticket</button>
+            </div>           
         </div>
     )
 }
