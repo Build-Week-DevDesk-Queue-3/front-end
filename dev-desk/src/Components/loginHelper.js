@@ -28,7 +28,7 @@ class LoginHelper extends React.Component {
             .then(res => {
                 console.log(res);
                 localStorage.setItem('token', res.data.token);
-                localStorage.setItem('id', res.data.data[0].id);
+                localStorage.setItem('id', res.data.data[0].userId);
                 localStorage.setItem('name', res.data.data[0].username);
                 this.props.history.push('/helper');
             })
@@ -55,6 +55,7 @@ class LoginHelper extends React.Component {
                         value={this.state.credentials.username}
                         onChange={this.handleChange}
                         placeholder='User Name'
+                        className='helperLoginInput'
                     />
                     <input
                         type='password'
@@ -62,6 +63,7 @@ class LoginHelper extends React.Component {
                         value={this.state.credentials.password}
                         onChange={this.handleChange}
                         placeholder='Password'
+                        className='helperLoginInput'
                     />
                     <button>Log In</button>
                     {this.state.failLogin === true ? <p>Log In Failed</p> : null}
