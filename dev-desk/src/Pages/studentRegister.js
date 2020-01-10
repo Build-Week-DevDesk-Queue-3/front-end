@@ -15,16 +15,17 @@ export class studentRegister extends React.Component {
 
   register = e => {
     e.preventDefault();
-
+    
     axios
-      .post('/user/register', {
-        username: this.username,
-        password: this.password
+      .post('https://dev-desk-que-3-bw.herokuapp.com/api/user/register', {
+        username: this.state.username,
+        password: this.state.password
       })
       .then(res => {
         this.setState(res.message);
         setTimeout(() => {window.location='/studentLogin'}, 2000)
       })
+      .catch(err => console.log(err))
   }
 
   render() {
@@ -67,7 +68,7 @@ export class studentRegister extends React.Component {
             Register
           </button>
         </div>
-        <p>{this.message}</p>
+        <p>{this.state.message}</p>
       </div>
     );
   }
