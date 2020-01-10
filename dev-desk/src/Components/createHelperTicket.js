@@ -6,6 +6,7 @@ function CreateTicket() {
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
     const [attempted, setAttempted] = useState('');
+    const userID = localStorage.getItem('id');
 
     const handleTitle = e => {
         setTitle(e.target.value)
@@ -22,18 +23,20 @@ function CreateTicket() {
 
     const handleSubmit = e => {
         e.preventDefault();
+        let number = Number(userID);
 
         axiosWithAuth()
-            .post('/ticket' , {
+            .post('/ticket/', {
                 title: title,
                 category: category,
                 description: description,
-                attempted: attempted
+                attempted: attempted,
+                userId: number
             })
             .then(res => console.log(res.message))
             .catch(err => console.log(err.message));
 
-       // window.location='/helper'
+        window.location='/helper'
     }
 
     const handleCancel = e => {
