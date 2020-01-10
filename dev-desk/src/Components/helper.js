@@ -60,6 +60,7 @@ function Helper() {
 
     const ticketResolved = e => {
         let ticket = Number(e.target.value);
+        console.log(ticket)
 
         axiosWithAuth()
             .put('/ticket/resolved', {
@@ -104,7 +105,7 @@ function Helper() {
                             <p>Category: {ticket.category}</p>
                             <p>Description: {ticket.description}</p>
                             <p>Attempted: {ticket.attempted}</p>
-                            <button valule={ticket.id} onClick={ticketResolved}>Ticket Resolved</button>
+                            <button value={ticket.id} onClick={ticketResolved}>Ticket Resolved</button>
                             <button value={ticket.id} onClick={unassignTicket}>Unassign Ticket</button>
                         </div>
                     ))}
