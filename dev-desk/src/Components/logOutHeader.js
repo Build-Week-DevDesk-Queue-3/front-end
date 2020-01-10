@@ -3,10 +3,9 @@ import styled from 'styled-components';
 
 const Button = styled.button`
     float: right;
-    margin-right: 10%;
+    margin-right: 8%;
     margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 5px;
+    padding: 10px;
 `
 
 function LogOutHeader() {
