@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import welcomeImg from '../../src/homePage.svg';
+import welcomeImg from '../../src/SVG/homePage.svg';
 
 function HomePage() {
 	return (
