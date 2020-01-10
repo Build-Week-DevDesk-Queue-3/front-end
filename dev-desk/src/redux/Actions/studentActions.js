@@ -3,12 +3,12 @@ import {
   LOADING_UI, GET_ALL_TICKETS, CREATE_TICKET,
   DELETE_TICKET, VIEW_TICKET, CLOSE_TICKET,
   SEARCH_QUERY_CHANGE, TOGGLE_CREATE_TICKET
-} from './types';
+} from '../types';
 
 export const getAllTickets = () => dispatch => {
   dispatch({type: LOADING_UI});
   axiosWithAuth()
-    .get('#')
+    .get('https://dev-desk-que-3-bw.herokuapp.com/api/ticket/')
     
     .then(([data]) =>{
       dispatch({
@@ -21,7 +21,7 @@ export const getAllTickets = () => dispatch => {
 export const createTicket = ticketDetails => dispatch => {
   dispatch({type: LOADING_UI});
   axiosWithAuth()
-    .post('#', ticketDetails)
+    .post('https://dev-desk-que-3-bw.herokuapp.com/api/ticket/', ticketDetails)
     
     .then(({data}) => {
       dispatch({

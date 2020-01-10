@@ -1,5 +1,5 @@
 import React from "react";
-import loginImg from "../../src/signIn.svg";
+import loginImg from "../../src/SVG/signIn.svg";
 import axios from 'axios' //added import
 
 class studentLogin extends React.Component {
