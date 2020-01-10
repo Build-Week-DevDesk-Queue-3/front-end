@@ -1,6 +1,6 @@
 import React from 'react';
-import registerImg from '../../src/register.svg';
-import axios from 'axios'
+import axios from 'axios';
+import registerImg from '../../src/SVG/register.svg';
 
 export class studentRegister extends React.Component {
   state = {
