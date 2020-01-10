@@ -73,6 +73,24 @@ function Helper() {
     const handleCreateTicket = e => {
         window.location=('/helperTicket');
     }
+
+    const deleteTicket = e => {
+        e.preventDefault();
+        let user = Number(userID);
+        let id = Number(e.target.value)
+
+        console.log(user);
+        console.log(id);
+
+        axiosWithAuth()
+            .delete('/ticket/', {data: {
+                userId: user,
+                ticketId: id
+            }})
+            .catch(err => console.log(err.message))
+        
+        setTimeout(() => {setUpdate(update +1)}, 100);
+    }
     
     return(
         <div className='helperComponent'>
@@ -93,6 +111,7 @@ function Helper() {
                             {ticket.resolved === true ? <p>Resolved</p> : null }
                             {ticket.openStatus === false && ticket.resolved === false ? <p>Ticket Assigned</p> : null}
                             {ticket.resolved === false && ticket.openStatus === true ? <button onClick={assignTicket} value={ticket.id}>Assign Ticket</button> : null}
+                            {ticket.userId === Number(userID) ? <button value={ticket.id} onClick={deleteTicket}>Delete</button> : null}
                         </div>
                     ))}
                     
