@@ -1,19 +1,29 @@
 import React from 'react';
 import axios from 'axios';
+import {withRouter} from 'react-router';
 import {ContainerWrap, PageHeader, ImageContent, StyledImg, FormWrapper, FormGroup, FormLabel, FormInput} from '../Components/Styles';
 import {Radio, Button, Icon} from 'antd';
 import registerImg from '../../src/SVG/register.svg';
 
 
 export class SignUp extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
   state = {
     username: '',
     password: '',
-    message:''
+    message:'',
+    email: ''
   } 
 
   handleChange = e => {
     this.setState({[e.target.name]: e.target.value})    
+  }
+  
+  handleRegisterClick(register) {
+    this.props.history.push('/studentDashboard')
   }
 
   register = e => {
@@ -30,7 +40,7 @@ export class SignUp extends React.Component {
       })
       .catch(err => console.log(err))
   }
-
+  
   render() {
     return (
       <ContainerWrap ref={this.props.containerRef}>
@@ -107,4 +117,4 @@ export class SignUp extends React.Component {
   }
 }
 
-export default SignUp
+export default withRouter(SignUp)
