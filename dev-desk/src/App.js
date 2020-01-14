@@ -19,7 +19,7 @@ function App() {
         <HelperPrivateRoute exact path ='/helper' component={Helper}/>
         <Route path="/studentLogin" component={studentLogin}/>
         <Route path="/studentRegister" component={studentRegister}/>
-        <Route path='/helper/Ticket' component={CreateTicket}/>
+        <HelperPrivateRoute path='/helper/Ticket' component={CreateTicket}/>
         <StudentPrivateRoute exact path='/studentDashboard' component={studentDashboard}/>
       </div>
     </BrowserRouter>
