@@ -71,7 +71,7 @@ function Helper() {
     }
 
     const handleCreateTicket = e => {
-        window.location=('/helperTicket');
+        window.location=('/helper/Ticket');
     }
 
     const deleteTicket = e => {
