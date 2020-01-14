@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {axiosWithAuth} from './axiosWithAuth';
+import {axiosWithAuth} from '../axiosWithAuth';
 
-function CreateTickets() {
+function TicketCreator() {
   const [tikTitle, setTikTitle] = useState('');
   const [tikCateg, setTikCateg] = useState('');
   
@@ -112,4 +112,4 @@ function CreateTickets() {
   )
 }
 
-export default CreateTickets;
+export default TicketCreator;

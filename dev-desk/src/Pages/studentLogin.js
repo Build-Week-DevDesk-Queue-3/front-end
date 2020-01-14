@@ -7,27 +7,46 @@ import {
 } from '../Components/Styles';
 import RadioBttn from '../Components/radio';
 
+import {Icon} from 'antd';
 import loginImg from "../../src/SVG/signIn.svg";
 
 
-class studentLogin extends React.Component {
-  //added state
+export class studentLogin extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this)
+  }
+
   state = {
     credentials: {
-        username: '',
-        password: ''
+      username: ' ',
+      password: ' '
     },
     failLogin: false
-};
-//added handleChange
-handleChange = e => {
+  };
+ 
+  handleChange = e => {
     this.setState({
-        credentials: {
-            ...this.state.credentials,
-            [e.target.name]: e.target.value
-        }
+      credentials: {
+        ...this.state.credentials,
+        [e.target.name]: e.target.value
+      }
     })
-};
+  };
+
+  login = e => {
+    e.preventDefault();
+
+    axios
+      .post('https://dev-desk-que-3-bw.herokuapp.com/api/user/login', this.state.credentials)
+
+      .then(res => {
+        console.log(res);
+      })
+  }
+
+
+
 //added login
 login = e => {
     e.preventDefault();
