@@ -7,6 +7,7 @@ import Helper from './Components/helper';
 import studentLogin from './Pages/studentLogin';
 import SignUp from './Pages/SignUp';
 import studentDashboard from './Pages/studentDashboard';
+import CreateTicket from './Components/createHelperTicket';
 import '../src/App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <HelperPrivateRoute exact path ='/helper' component={Helper}/>
         <Route path="/studentLogin" component={studentLogin}/>
         <Route path="/SignUp" component={SignUp}/>
+        <HelperPrivateRoute path='/helper/Ticket' component={CreateTicket}/>
         <StudentPrivateRoute exact path='/studentDashboard' component={studentDashboard}/>
       </div>
     </BrowserRouter>
