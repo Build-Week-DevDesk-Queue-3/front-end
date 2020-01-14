@@ -22,8 +22,8 @@ export class studentRegister extends React.Component {
         password: this.state.password
       })
       .then(res => {
-        this.setState(res.message);
-        setTimeout(() => {window.location='/studentLogin'}, 2000)
+        this.setState({message: 'Thank you for registering!'});
+        setTimeout(() => {window.location='/studentLogin'}, 2000);
       })
       .catch(err => console.log(err))
   }

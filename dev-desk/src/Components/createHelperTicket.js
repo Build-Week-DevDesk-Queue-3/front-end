@@ -7,6 +7,7 @@ function CreateTicket() {
     const [description, setDescription] = useState('');
     const [attempted, setAttempted] = useState('');
     const userID = localStorage.getItem('id');
+    const [message, setMessage] = useState('');
 
     const handleTitle = e => {
         setTitle(e.target.value)
@@ -24,6 +25,7 @@ function CreateTicket() {
     const handleSubmit = e => {
         e.preventDefault();
         let number = Number(userID);
+        setMessage('Your ticket is being submitted.')
 
         axiosWithAuth()
             .post('/ticket/', {
@@ -36,7 +38,7 @@ function CreateTicket() {
             .then(res => console.log(res.message))
             .catch(err => console.log(err.message));
 
-        window.location='/helper'
+        setTimeout(() => {window.location='/helper'}, 1000)
     }
 
     const handleCancel = e => {
@@ -89,6 +91,7 @@ function CreateTicket() {
                 <button className='helperTicketButton'>Submit</button>
             </form>
             <button onClick={handleCancel} className='helperTicketButton'>Cancel</button>
+    <       p>{message}</p>
         </div>
     )
 }

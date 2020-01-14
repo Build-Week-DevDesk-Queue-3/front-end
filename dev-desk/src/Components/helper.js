@@ -79,9 +79,6 @@ function Helper() {
         let user = Number(userID);
         let id = Number(e.target.value)
 
-        console.log(user);
-        console.log(id);
-
         axiosWithAuth()
             .delete('/ticket/', {data: {
                 userId: user,
