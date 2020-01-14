@@ -1,6 +1,14 @@
 import React from "react";
+import axios from 'axios';
+
+import {
+  ContainerWrap, PageHeader, ImageContent, FormLabel, BttnLogin,
+  StyledImg, StyledFooter, FormWrapper, FormGroup, FormInput
+} from '../Components/Styles';
+import RadioBttn from '../Components/radio';
+
 import loginImg from "../../src/SVG/signIn.svg";
-import axios from 'axios' //added import
+
 
 class studentLogin extends React.Component {
   //added state
@@ -41,6 +49,8 @@ login = e => {
   
   render() {
     return (
+
+
       <div className="base-container" ref={this.props.containerRef}>
         <div className="header">Student Login</div>
         

@@ -1,12 +1,20 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
-import {HelperPrivateRoute, StudentPrivateRoute} from './Components/privateRoute';
+
+import {
+  HelperPrivateRoute,
+  StudentPrivateRoute
+} from './Components/privateRoute';
+
 import HomePage from './Pages/homePage';
 import LoginHelper from './Components/loginHelper';
+
 import Helper from './Components/helper';
 import studentLogin from './Pages/studentLogin';
+
 import SignUp from './Pages/SignUp';
 import studentDashboard from './Pages/studentDashboard';
+
 import CreateTicket from './Components/createHelperTicket';
 import '../src/App.css'
 

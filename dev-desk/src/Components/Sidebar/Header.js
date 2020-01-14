@@ -16,7 +16,7 @@ function Header() {
         Login
       </NavLink>
       
-      <NavLink activeClassName="active" to="/studentRegister">
+      <NavLink activeClassName="active" to="/SignUp">
         Register
       </NavLink>
     </nav>
