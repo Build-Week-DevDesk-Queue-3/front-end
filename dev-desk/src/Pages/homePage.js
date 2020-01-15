@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {ContainerWrap, PageHeader, ImageContent, StyledImg, BttnRegister, BttnStudent, BttnHelper, Paragraph} from '../Components/Styles';
-import welcomeImg from '../../src/SVG/homePage.svg';
+import welcomeImg from '../Images/homePage.svg';
 
 function HomePage() {
 	return (

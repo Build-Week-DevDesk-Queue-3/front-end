@@ -2,12 +2,13 @@ import React from 'react';
 import axios from 'axios';
 
 import {
-  ContainerWrap, PageHeader, ImageContent, FormLabel,
+  ContainerWrap, PageHeader, ImageContent, FormLabel, BttnRegister,
   StyledImg, StyledFooter, FormWrapper, FormGroup, FormInput
 } from '../Components/Styles';
+import RadioBttn from '../Components/radio';
 
-import {Radio, Button} from 'antd';
-import registerImg from '../SVG/register.svg';
+import {Icon} from 'antd';
+import registerImg from '../Images/register.svg';
 
 export class SignUp extends React.Component {
   constructor(props) {
@@ -73,35 +74,29 @@ export class SignUp extends React.Component {
               placeholder="password"
               value={this.state.password}
               onChange={this.handleChange}
+              prefix={
+                <Icon
+                  type="lock"
+                  style={{color: "rgba(0,0,0,.25)"}}
+                />
+              }
             />
           </FormGroup>
           
           <FormGroup>
-            <Radio.Group
-              name="role"
-              defaultValue={1}
-              onChange={this.handleChange}
-            />
-            
-            <Radio value={1}>I am a Student</Radio>
-            <Radio value={2}>I am a Helper</Radio>
+            <RadioBttn/>
           </FormGroup>
         </FormWrapper>
         
         <StyledFooter>
-          <Button
+          <BttnRegister
             type="primary"
             htmlType="submit"
             className="signup-form-button"
             onClick={this.register}
-            style={{
-              background: "#2F6627",
-              border: "none",
-              margin: "0"
-            }}
           >
             Register
-          </Button>
+          </BttnRegister>          
           
           <p>{this.state.message}</p>
         </StyledFooter>

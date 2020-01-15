@@ -4,8 +4,10 @@ import {axiosWithAuth} from './axiosWithAuth';
 function CreateTicket() {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
+    
     const [description, setDescription] = useState('');
     const [attempted, setAttempted] = useState('');
+    
     const userID = localStorage.getItem('id');
     const [message, setMessage] = useState('');
 
