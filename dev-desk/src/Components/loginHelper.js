@@ -1,5 +1,7 @@
 import React from 'react';
 import helperImg from '../Images/askMe.svg';
+
+import {ContainerWrap} from '../Components/Styles';
 import axios from 'axios';
 
 class LoginHelper extends React.Component {
@@ -40,7 +42,7 @@ class LoginHelper extends React.Component {
     
     render(){
         return(
-            <div>
+            <ContainerWrap>
                 <h1>Helper Log In Page</h1>
                 
                 <div className='content'>
@@ -68,7 +70,7 @@ class LoginHelper extends React.Component {
                     <button>Log In</button>
                     {this.state.failLogin === true ? <p>Log In Failed</p> : null}
                 </form>
-            </div>
+            </ContainerWrap>  
         );
     };
 };

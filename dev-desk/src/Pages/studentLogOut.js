@@ -8,7 +8,7 @@ const Button = styled.button`
     padding: 10px;
 `
 
-function LogOutHeader() {
+function LogOutStd() {
 
     const logOut = e => {
         e.preventDefault();
@@ -23,4 +23,4 @@ function LogOutHeader() {
     )
 }
 
-export default LogOutHeader;
+export default LogOutStd;
