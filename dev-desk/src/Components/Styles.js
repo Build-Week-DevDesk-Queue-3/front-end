@@ -5,7 +5,7 @@ export const ContainerWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #C8ADC0;
+  background-color: #D72638;
 `;
 
 export const PageHeader = styled.h1`
@@ -206,4 +206,13 @@ export const SideLink = styled.link`
     border-right: 5px solid dimgray;
     background-color: #680E4B;
   }
+`;
+
+export const ContentBttn = styled.button`
+  margin: 10px;  
+`;
+
+export const WelcomeStd = styled.h1`
+  margin-left: 10%;
+  color: 
 `;

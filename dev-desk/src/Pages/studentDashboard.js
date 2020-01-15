@@ -73,7 +73,13 @@ function StdDashBoard() {
 			})
 			
 			.catch(err => console.log(err.message))
+		
+		setTimeout(() => {setNewUpdate(newUpdate +1)}, 100);
 	}
+
+	return (
+		
+	)
 }
 
 export default StdDashBoard;
