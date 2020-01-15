@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {axiosWithAuth} from '../axiosWithAuth';
+import {axiosWithAuth} from '../Components/axiosWithAuth';
 
 function TicketCreator() {
   const [tikTitle, setTikTitle] = useState('');

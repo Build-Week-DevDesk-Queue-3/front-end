@@ -10,18 +10,16 @@ import RadioBttn from '../Components/radio';
 import {Icon} from 'antd';
 import registerImg from '../Images/register.svg';
 
-export class SignUp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this)
+class SignUp extends React.Component {
+  constructor() {
+    super();
+    this.state={
+      username: '',
+      password: '',
+      message: ''
+    };
   }
-  
-  state = {
-    username: " ",
-    password: " ",
-    message: " "
-  };
-  
+   
   handleChange = e => {
     this.setState({[e.target.name]: e.target.value});
   };
@@ -99,6 +97,8 @@ export class SignUp extends React.Component {
           </BttnRegister>          
           
           <p>{this.state.message}</p>
+          
+          Or <a href='./studentLogin'>login</a>
         </StyledFooter>
       </ContainerWrap>
     )

@@ -24,7 +24,7 @@ export const StudentPrivateRoute = ({component: Component, ...theRest}) => {
                 if (localStorage.getItem('token')) {
                 return <Component/>
             } else {
-                return <Redirect to='/loginStudent'/>
+                return <Redirect to='/studentLogin'/>
             }
             }}
         />

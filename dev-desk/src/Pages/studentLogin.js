@@ -9,8 +9,7 @@ import {
 import {Icon, Form, Checkbox} from 'antd';
 import loginImg from '../Images/signIn.svg';
 
-
-export class studentLogin extends React.Component {
+class studentLogin extends React.Component {
   constructor() {
     super();
     this.state={
@@ -95,8 +94,7 @@ export class studentLogin extends React.Component {
               <Form.Item>
                 <Checkbox>
                   Remember me
-                </Checkbox>
-                )}          
+                </Checkbox>          
               </Form.Item>
           </FormGroup>
         </FormWrapper>
@@ -118,4 +116,4 @@ export class studentLogin extends React.Component {
   }  
 }; 
    
-export default studentLogin
+export default studentLogin;

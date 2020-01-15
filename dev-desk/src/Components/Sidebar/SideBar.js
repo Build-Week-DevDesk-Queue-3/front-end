@@ -1,26 +1,15 @@
 import React from 'react';
-import List from '@material-ui/core/List';
 
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import {
+  Body, StyledApp, SideContainer, StyledBar, SideLink
+} from '../Styles';
 
-function SideBar() {
-  return (
-    <List disablePadding dense>
-      
-      <ListItem button>
-        <ListItemText>Home</ListItemText>
-      </ListItem>
-      
-      <ListItem button>
-        <ListItemText>User Profile</ListItemText>
-      </ListItem>
-      
-      <ListItem button>
-        <ListItemText>Tickets</ListItemText>
-      </ListItem>
-    </List>
-  );
+class SideNav extends React.Component {
+  render() {
+    return (
+      <SideContainer>
+        
+      </SideContainer>
+    )
+  }
 }
-
-export default SideBar;
