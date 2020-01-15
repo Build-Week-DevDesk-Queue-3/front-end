@@ -8,7 +8,7 @@ import {
 import RadioBttn from '../Components/radio';
 
 import {Icon} from 'antd';
-import registerImg from '../SVG/register.svg';
+import registerImg from '../Images/register.svg';
 
 export class SignUp extends React.Component {
   constructor(props) {
@@ -77,7 +77,7 @@ export class SignUp extends React.Component {
               prefix={
                 <Icon
                   type="lock"
-                  style={{color: "rgba(0,0,0,.25"}}
+                  style={{color: "rgba(0,0,0,.25)"}}
                 />
               }
             />

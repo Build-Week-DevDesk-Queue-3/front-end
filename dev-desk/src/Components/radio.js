@@ -2,8 +2,11 @@ import React from 'react';
 import {Radio} from 'antd';
 
 class RadioBttn extends React.Component {
-  state = {
-    value: 1,
+  constructor() {
+    super();
+    this.state={
+      value: '1'
+    };
   }
 
   onChange = e => {

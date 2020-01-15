@@ -1,5 +1,5 @@
 import React from 'react';
-import helperImg from '../../src/SVG/askMe.svg';
+import helperImg from '../Images/askMe.svg';
 import axios from 'axios';
 
 class LoginHelper extends React.Component {
