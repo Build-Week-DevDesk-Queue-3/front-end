@@ -5,7 +5,7 @@ class RadioBttn extends React.Component {
   constructor() {
     super();
     this.state={
-      value: '1'
+      value: 1
     };
   }
 

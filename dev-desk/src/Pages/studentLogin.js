@@ -49,11 +49,9 @@ export class studentLogin extends React.Component {
         console.log(err.message);
         this.setState({failLogin: true});
       })    
-  };
+  }; 
   
   render() {
-    const {getFieldDecorator} = this.props.form;
-    
     return (
       <ContainerWrap ref={this.props.containerRef}>
         <PageHeader>Please Login Below</PageHeader>
@@ -95,13 +93,9 @@ export class studentLogin extends React.Component {
           
           <FormGroup>
               <Form.Item>
-                {getFieldDecorator('remember', {
-                  valuePropName: 'checked',
-                  initialValue: true,
-                })(
-                  <Checkbox>
-                    Remember me
-                  </Checkbox>
+                <Checkbox>
+                  Remember me
+                </Checkbox>
                 )}          
               </Form.Item>
           </FormGroup>
