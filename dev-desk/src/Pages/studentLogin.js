@@ -60,9 +60,7 @@ class studentLogin extends React.Component {
         </ImageContent>
         
         <FormWrapper>
-          <FormGroup>
-            <FormLabel htmlFor='username'>Username</FormLabel>
-            
+          <FormGroup onSubmit={this.login}>
             <FormInput
               type='text'
               name='username'
@@ -70,10 +68,6 @@ class studentLogin extends React.Component {
               value={this.state.credentials.username}
               onChange={this.handleChange}
             />
-          </FormGroup>
-          
-          <FormGroup>
-            <FormLabel htmlFor='password'>Password</FormLabel>
             
             <FormInput
               type='password'
@@ -87,15 +81,15 @@ class studentLogin extends React.Component {
                   style={{color: 'rgba(0,0,0,.25)'}}
                 />
               }
-            />
+            />        
           </FormGroup>
           
           <FormGroup>
-              <Form.Item>
-                <Checkbox>
-                  Remember me
-                </Checkbox>          
-              </Form.Item>
+            <Form.Item>
+              <Checkbox>
+                Remember me
+              </Checkbox>          
+            </Form.Item>
           </FormGroup>
         </FormWrapper>
         

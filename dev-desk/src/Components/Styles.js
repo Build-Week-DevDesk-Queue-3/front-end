@@ -52,7 +52,7 @@ export const FormInput = styled.input`
   padding: 0px 10px;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
-  background-color: #8E95A9;
+  background-color: #1B2021;
   border: 0;
   border-radius: 4px;
   margin-bottom: 31px;
@@ -74,7 +74,7 @@ export const StyledFooter = styled.div`
 `;
 
 export const BttnLogin = styled.button`
-  background-color: #1B2021;
+  background-color: #6A61FF;
   border-radius: 28px;
   border: 1 px solid #18ab29;
   display: inline-block;
@@ -87,7 +87,7 @@ export const BttnLogin = styled.button`
   text-shadow: 0px 1px 0px #2F6627;
   
   &:hover {
-    background-color: #D72638;
+    background-color: #680E4B;
   }
   
   &:active {
@@ -97,7 +97,7 @@ export const BttnLogin = styled.button`
 `;
 
 export const BttnRegister = styled.button`
-  background-color: #1B2021;
+  background-color: #6A61FF;
   border-radius: 28px;
   border: 1 px solid #18ab29;
   display: inline-block;
@@ -110,7 +110,7 @@ export const BttnRegister = styled.button`
   text-shadow: 0px 1px 0px #2F6627;
   
   &:hover {
-    background-color: #D72638;
+    background-color: #680E4B;
   }
   
   &:active {
@@ -120,7 +120,7 @@ export const BttnRegister = styled.button`
 `;
 
 export const BttnStudent = styled.button`
-  background-color: #1B2021;
+  background-color: #6A61FF;
   border-radius: 28px;
   border: 1 px solid #18ab29;
   display: inline-block;
@@ -133,7 +133,7 @@ export const BttnStudent = styled.button`
   text-shadow: 0px 1px 0px #2F6627;
   
   &:hover {
-    background-color: #D70638;
+    background-color: #680E4B;
   }
   
   &:active {
@@ -143,7 +143,7 @@ export const BttnStudent = styled.button`
 `;
 
 export const BttnHelper = styled.button`
-  background-color: #1B2021;
+  background-color: #6A61FF;
   border-radius: 28px;
   border: 1 px solid #18ab29;
   display: inline-block;
@@ -156,7 +156,7 @@ export const BttnHelper = styled.button`
   text-shadow: 0px 1px 0px #2F6627;
   
   &:hover {
-    background-color: #D72638;
+    background-color: #680E4B;
   }
   
   &:active {
@@ -191,7 +191,7 @@ export const StyledApp = styled.div`
 
 export const SideContainer = styled.div`
   min-height: 100vh;
-  background-color: #6A61FF;
+  background-color: #515052;
 `;
 
 export const StyledBar = styled.div`
@@ -214,5 +214,39 @@ export const ContentBttn = styled.button`
 
 export const WelcomeStd = styled.h1`
   margin-left: 10%;
-  color: 
+  color: #6A61FF;
+`;
+
+export const StdComponent = styled.div`
+  margin-top: -22px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #D72638;
+`;
+
+export const StdTik = styled.div`
+  color: #F0F4F7;
+`;
+
+export const StdTikContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+export const StdSubContainer = styled.div`
+  width: 40%;
+`;
+
+export const StdCreateBttn = styled.button`
+  float: left;
+  margin-left: 8%;
+  margin-top: 10px;
+  padding: 10px;
+`;
+
+export const ListHelper = styled.div`
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #000000;
+  background: #515052;
 `;
