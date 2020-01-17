@@ -1,6 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import ticketImg from '../Images/ticketBoard.svg';
 
+import {
+	WelcomeStd, ContentBttn, StdComponent, StdTik,
+	StdTikContainer, StdSubContainer, StdCreateBttn, ListHelper, TikHeader
+} from '../Components/Styles';
+
 import {axiosWithAuth} from '../Components/axiosWithAuth';
 import LogOutStd from '../Pages/studentLogOut';
 
@@ -78,7 +83,25 @@ function StdDashBoard() {
 	}
 
 	return (
-		
+		<StdComponent>
+			<LogOutStd/>
+			
+			<StdCreateBttn onClick={handleCreateTik}>
+				Create Help Ticket
+			</StdCreateBttn>
+			
+			<div>
+				<WelcomeStd>Welcome {username} to the Student Dashboard</WelcomeStd>
+			</div>
+			
+			<StdTikContainer>
+				<StdSubContainer>
+					<TikHeader>List of Tickets</TikHeader>
+					
+					{tickets.map()}
+				</StdSubContainer>
+			</StdTikContainer>
+		</StdComponent>
 	)
 }
 

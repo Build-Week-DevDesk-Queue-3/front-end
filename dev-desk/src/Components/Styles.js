@@ -250,3 +250,7 @@ export const ListHelper = styled.div`
   border: 1px solid #000000;
   background: #515052;
 `;
+
+export const TikHeader = styled.h3`
+  font-size: 20px;
+`;
